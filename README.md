@@ -6,3 +6,7 @@ Among all Machine learning Algorithm Random Forest ensemble machine learning alg
 All of process to build model we eleborate jupyter notebook you can see.
 
 Thank You!
+
+
+https://user-images.githubusercontent.com/80037791/162590931-ee6e4d61-ddc9-4f65-8a6e-55d5b375324a.mp4
+
