@@ -15,39 +15,39 @@ dic_img = {
     "Yamaha" : './images/yamaha.png'
 }
 
-
-with open('bike_predictor_rf.pkl', 'rb') as f:
-    model = pickle.load(f)
-
-
-with open('search.pkl', 'rb') as sf : 
-    search_txt = pickle.load(sf)
-
 st.title('Bike Price Predictor!')
 st.write("###### Created By [Rakesh Sahni](https://rakeshsahni.github.io/rakesh/), [Source Code](https://github.com/rakeshsahni/bike-price-predictor.git)")
 
+# with open('bike_predictor_rf.pkl', 'rb') as f:
+#     model = pickle.load(f)
 
 
-brand = st.sidebar.selectbox("Brand Name", search_txt['brand']) # "Bajaj", string  
-kms_driven = st.sidebar.number_input('kms driven', value=6100) # 20000 float
-power = st.sidebar.number_input("Power Of Bike in CC", value=500) # 220  float
-age = st.sidebar.number_input('Age', value = 2) #'7' string
-city = st.sidebar.selectbox('City', search_txt['city']) #'Bangalore' string
+# with open('search.pkl', 'rb') as sf : 
+#     search_txt = pickle.load(sf)
 
-if st.sidebar.button("Bike Price") : 
+
+
+
+# brand = st.sidebar.selectbox("Brand Name", search_txt['brand']) # "Bajaj", string  
+# kms_driven = st.sidebar.number_input('kms driven', value=6100) # 20000 float
+# power = st.sidebar.number_input("Power Of Bike in CC", value=500) # 220  float
+# age = st.sidebar.number_input('Age', value = 2) #'7' string
+# city = st.sidebar.selectbox('City', search_txt['city']) #'Bangalore' string
+
+# if st.sidebar.button("Bike Price") : 
     
-    with st.container() : 
-        img, txt = st.columns((1,2))
+#     with st.container() : 
+#         img, txt = st.columns((1,2))
 
-        with img : 
-            st.image(dic_img[brand], width=200)
+#         with img : 
+#             st.image(dic_img[brand], width=200)
         
-        with txt : 
-            st.write(f"#### Bike Brand : {brand}")
-            st.write(f"###### Driven Bike in kms : {kms_driven}")
-            st.write(f"###### Power of bike in cc : {power}")
-            st.write(f"###### Age of bike : {age}")
-            st.write(f"###### city from you buy : {city}")
-    y_pred =  model.predict([[brand, kms_driven, power, age, city]])
-    st.write(f"### I Think Bike Price Should Be ₹{round(y_pred[0], 2)}")
+#         with txt : 
+#             st.write(f"#### Bike Brand : {brand}")
+#             st.write(f"###### Driven Bike in kms : {kms_driven}")
+#             st.write(f"###### Power of bike in cc : {power}")
+#             st.write(f"###### Age of bike : {age}")
+#             st.write(f"###### city from you buy : {city}")
+#     y_pred =  model.predict([[brand, kms_driven, power, age, city]])
+#     st.write(f"### I Think Bike Price Should Be ₹{round(y_pred[0], 2)}")
     
